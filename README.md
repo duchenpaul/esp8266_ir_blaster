@@ -10,7 +10,7 @@ by recording the signal from a IR sensor.
 
 See a demo: [https://youtu.be/YuApbm1sk8Q]
 
-# Installation
+## Installation
 
 Setup up your environment to compile programs for the esp8266 with the Arduino IDE:
 [https://github.com/espressif/arduino-esp32]
@@ -28,7 +28,7 @@ Connect the sensor and the (transistor amplified) IR LED to the pins specified i
 
 If everything worked and you run the chip connected to the Arduino IDE you should be displayed the IP-address the server is running on in the serial monitor.
 
-# Usage
+## Usage
 
 The Webserver expects a `POST` Http-Request to the `/play` Route with a parameter `timings`. This parameter is supposed to contain a commaseparated string of integers specifying the signal to send with the IR LED.
 
@@ -95,5 +95,13 @@ If you want to execute multiple signals add them like this:
 ```
 
 
+## Hardware
 
+- Wemos D1 Mini
+- IR LED
+- 2N3904 Transistor
+- 330 Ohm resistor
+- IR receiver (TL1838) - Needed for reading codes
+
+![alt text](http://i.imgur.com/druTsOU.png "circuit")
 
