@@ -58,7 +58,11 @@ void handlePlay() {
       Serial.println(signal_data[i]);
   }
 
+  digitalWrite(LED_BUILTIN, LOW);
   irsend.sendRaw(signal_data, current_data_length, 38);  // Send a raw data capture at 38kHz.
+  digitalWrite(LED_BUILTIN, HIGH);
+
+  Serial.println("Signal sent!");
   server.sendHeader("Access-Control-Allow-Origin", "*");
   server.send(200, "text/plain", response);
 }
@@ -102,6 +106,8 @@ void handleNotFound(){
 }
 
 void setup(void){
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, HIGH);
   Serial.begin(115200);
   irrecv.enableIRIn();  // Start the receiver
   irsend.begin(); // Start IR sender
