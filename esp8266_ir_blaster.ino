@@ -137,6 +137,7 @@ void setup(void)
     Serial.println();
     Serial.print("IRrecvDemo is now running and waiting for IR message on Pin ");
     Serial.println(RECV_PIN);
+
     // WiFiManager
     // Local intialization. Once its business is done, there is no need to keep it around
     WiFiManager wifiManager;
@@ -144,9 +145,11 @@ void setup(void)
     // wifiManager.resetSettings();
     wifiManager.setAPCallback(configModeCallback);
     // or use this for auto generated name ESP + ChipID
+    
     wifiManager.autoConnect();
     // Manual Wifi
     // WiFi.begin(WIFI_SSID, WIFI_PWD);
+
     String hostname(HOSTNAME);
     hostname += String(ESP.getChipId(), HEX);
     // WiFi.hostname(hostname);
@@ -166,10 +169,10 @@ void setup(void)
     }
     Serial.println("");
     Serial.print("Connected to ");
-    Serial.println(SSID);
+    // Serial.println(SSID);
     Serial.print("IP address: ");
     Serial.println(WiFi.localIP());
-    
+
     if (MDNS.begin("esp8266"))
     {
         Serial.println("MDNS responder started");
