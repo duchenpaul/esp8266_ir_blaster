@@ -103,5 +103,5 @@ If you want to execute multiple signals add them like this:
 - 330 Ohm resistor
 - IR receiver (TL1838) - Needed for reading codes
 
-![alt text](http://i.imgur.com/druTsOU.png "circuit")
+![alt text](src/diagram.png "circuit")
 
