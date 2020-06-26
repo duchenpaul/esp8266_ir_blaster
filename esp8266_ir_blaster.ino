@@ -98,6 +98,13 @@ void handleRecord()
     {
         output += resultToSourceCode(& results);
         irrecv.resume(); // Receive the next value
+        digitalWrite(LED_BUILTIN, LOW);
+        delay(75);
+        digitalWrite(LED_BUILTIN, HIGH);
+        delay(75);
+        digitalWrite(LED_BUILTIN, LOW);
+        delay(75);
+        digitalWrite(LED_BUILTIN, HIGH);
     }
     else
     {
